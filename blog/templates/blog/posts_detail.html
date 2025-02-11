@@ -5,13 +5,58 @@
         </ul>
     </nav>
 </header>
+<title>Mon Blog</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
 
+            .card {
+                border: 1px solid #ddd;
+                padding: 10px;
+                margin: 10px 0;
+                background-color: #f9f9f9;
+            }
+
+            .card h2 {
+                margin: 0;
+            }
+
+            header, footer {
+                text-align: center;
+                background-color: #333;
+                color: #fff;
+                padding: 10px;
+            }
+
+            header nav ul {
+                padding: 0;
+                list-style: none;
+            }
+
+            header nav ul li {
+                display: inline;
+                margin: 0 10px;
+            }
+
+            header nav ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+            h1{
+                text-align: center;
+
+            }
+        </style>
 <h1>Post numéro: {{ post.id }}</h1>
-<a href="{% url 'post_list' %}"><button>retour</button></a>
 
 <p>Titre de la page: {{ post.title }}</p>
 <p>Contenue de la page: {{ post.content }}</p>
 <p>Date de la page: {{ post.created_at }}</p>
+
+<a href="{% url 'post_list' %}"><button>retour</button></a>
 
 <footer>
     <p>&copy; - Tous droits réservés.</p>
