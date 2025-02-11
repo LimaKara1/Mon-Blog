@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mon Blog</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            .card {
+                border: 1px solid #ddd;
+                padding: 10px;
+                margin: 10px 0;
+                background-color: #f9f9f9;
+            }
+
+            .card h2 {
+                margin: 0;
+            }
+
+            header, footer {
+                text-align: center;
+                background-color: #333;
+                color: #fff;
+                padding: 10px;
+            }
+
+            header nav ul {
+                padding: 0;
+                list-style: none;
+            }
+
+            header nav ul li {
+                display: inline;
+                margin: 0 10px;
+            }
+
+            header nav ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+            h1{
+                text-align: center;
+
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'form_post' %}">CREER UN POST</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <h1>Bienvenue sur mon blog</h1>
+        {% for post in posts %}
+        <div class="card">
+            <a href="{% url 'details_posts' post.id %}"><h2>{{ post.title }}</h2></a>
+            <p>{{ post.content }}</p>
+            <small>Publié le {{ post.created_at }}</small>
+        </div>
+        {% endfor %}
+        
+        <footer>
+            <p>&copy; - Tous droits réservés.</p>
+        </footer>
+    </body>
+</html>

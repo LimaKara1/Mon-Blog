@@ -1,0 +1,18 @@
+<header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'form_post' %}">Créer un Post</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h1>Post numéro: {{ post.id }}</h1>
+<a href="{% url 'post_list' %}"><button>retour</button></a>
+
+<p>Titre de la page: {{ post.title }}</p>
+<p>Contenue de la page: {{ post.content }}</p>
+<p>Date de la page: {{ post.created_at }}</p>
+
+<footer>
+    <p>&copy; - Tous droits réservés.</p>
+</footer>

@@ -1,0 +1,19 @@
+<header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'form_post' %}">Créer un Post</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h1>Créer un nouveau post</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}  
+        <button type="submit">Creer</button>
+    </form>
+    <a href="{% url 'post_list' %}"><button>Retour</button></a>
+
+    <footer>
+        <p>&copy; - Tous droits réservés.</p>
+    </footer>
