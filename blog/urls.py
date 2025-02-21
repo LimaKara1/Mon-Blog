@@ -9,3 +9,4 @@ urlpatterns = [
     path('blog/', blog, name='about'),
 ]
 
+
