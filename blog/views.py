@@ -1,9 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseRedirect
 from .models import Post
 from django import forms
-from django.urls import reverse
-
 
 
 def blog(request):
@@ -31,7 +28,6 @@ def form_post(request):
                 content=form.cleaned_data['content']
             )
             
-            return HttpResponseRedirect(reverse('post_list')) 
     else:
         form = PostForm()
     
